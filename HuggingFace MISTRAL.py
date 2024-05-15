@@ -25,7 +25,7 @@ def generate(prompt, history, temperature=0.9, max_new_tokens=1024, top_p=0.95, 
 
     formatted_prompt = format_prompt(prompt, history)
 
-    client = InferenceClient(model= "mistralai/Mixtral-8x7B-Instruct-v0.1", token='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')
+    client = InferenceClient(model= "mistralai/Mixtral-8x7B-Instruct-v0.1", token='token')
     stream = client.text_generation(formatted_prompt, **generate_kwargs, stream=True, details=True, return_full_text=False)
     output = ""
 
